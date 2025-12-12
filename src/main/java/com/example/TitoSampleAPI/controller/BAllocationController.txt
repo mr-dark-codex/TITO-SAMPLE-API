@@ -1,0 +1,112 @@
+package com.example.TitoSampleAPI.controller;
+
+import com.example.TitoSampleAPI.Entity.AllocationSampleData;
+import com.example.TitoSampleAPI.Entity.ErrorResponse;
+import com.example.TitoSampleAPI.Entity.TjDelivery;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.annotation.*;
+
+// import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+
+@RestController
+@RequestMapping("/sap/bc/rest/")
+public class AllocationController {
+
+    Map<Long, AllocationSampleData> map = new HashMap<>();
+    // Map<
+
+    @GetMapping("/titogatepass")
+    public List<AllocationSampleData> getAllocationSample(
+            @RequestParam Long gateslip,
+            @RequestParam String vehtype,
+            @RequestParam(required = false) String plant,
+            @RequestParam(required = false) String sapClientNo) {
+
+        System.out.println("gateslip : " + gateslip);
+        // seed the data
+        this.seedSampleData();
+
+        AllocationSampleData data = map.get(gateslip);
+        if (data != null) {
+            System.out.println("Allocation API Data : " + data.toString());
+            if (vehtype.equalsIgnoreCase(data.getVehType())) {
+                return List.of(data);
+            }
+        } else {
+            System.out.println("No data found for gateslip: " + gateslip);
+        }
+
+        return List.of(new AllocationSampleData());
+
+    }
+
+    public void seedSampleData() {
+        AllocationSampleData data = new AllocationSampleData();
+        data.setDriverName("Sunil Kumar");
+        data.setGateSlip(6205115649L);
+        data.setVehicle("RJ32GC2669");
+        data.setEntryDate("2025-12-11");
+        data.setEntryTime("10:07:31");
+        data.setVehType("LOADING");
+
+        TjDelivery item1 = new TjDelivery();
+        item1.setVbeln("8124245793");
+        item1.setPosnr(10);
+        item1.setMatnr(" 71000085");
+        item1.setMaktx("IB ROSS BROILER FINISHER FEED");
+        item1.setLfimg(7740);
+        item1.setMeins("KG");
+
+        TjDelivery item2 = new TjDelivery();
+        item2.setVbeln("8124245793");
+        item2.setPosnr(20);
+        item2.setMatnr(" 71000085");
+        item2.setMaktx("IB ROSS BROILER FINISHER FEED");
+        item2.setLfimg(7800);
+        item2.setMeins("KG");
+
+        data.setTjDelivery(Arrays.asList(item1, item2));
+
+        AllocationSampleData data2 = new AllocationSampleData();
+        data2.setDriverName("Kailash");
+        data2.setGateSlip(6205143387L);
+        data2.setVehicle("RJ23GA7425");
+        data2.setEntryDate("2025-12-11");
+        data2.setEntryTime("09:47:23");
+        data2.setVehType("UNLOADING");
+
+        TjDelivery item3 = new TjDelivery();
+        item3.setVbeln("8124267542");
+        item3.setPosnr(10);
+        item3.setMatnr(" 71000083");
+        item3.setMaktx("IB ROSS BROILER (PRESTARTER) FEED");
+        item3.setLfimg(120);
+        item3.setMeins("KG");
+
+        TjDelivery item4 = new TjDelivery();
+        item4.setVbeln("8124267542");
+        item4.setPosnr(20);
+        item4.setMatnr(" 71000083");
+        item4.setMaktx("IB ROSS BROILER (PRESTARTER) FEED");
+        item4.setLfimg(60);
+        item4.setMeins("KG");
+
+        data2.setTjDelivery(Arrays.asList(item3, item4));
+
+        map.put(6205115649L, data);
+        map.put(6205143387L, data2);
+
+    }
+
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    public ResponseEntity<ErrorResponse> handleMissingParams(MissingServletRequestParameterException ex) {
+        return ResponseEntity.badRequest()
+                .body(new ErrorResponse("Invalid parameter gateslip or vehtype or plant or sapClientNo"));
+    }
+}

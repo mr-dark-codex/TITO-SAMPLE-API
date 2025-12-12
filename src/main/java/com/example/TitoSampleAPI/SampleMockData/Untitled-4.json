@@ -1,0 +1,194 @@
+{
+  "DRIVERNAME": "Kailash",
+  "GATESLIP": 6205143387,
+  "VEHICLE": "RJ23GA7425",
+  "ENTRYDATE": "2025-12-11",
+  "ENTRYTIME": "09:47:23",
+  "VEHTYPE": "LOADING",
+  "TJ_DELIVERY": [
+    {
+      "VBELN": "8124267542",
+      "POSNR": 10,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 120,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 20,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 60,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 30,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 120,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 40,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 120,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 50,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 180,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 60,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 180,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 70,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 180,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 80,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 300,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 90,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 300,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 100,
+      "MATNR": " 71000083",
+      "MAKTX": "IB ROSS BROILER (PRESTARTER) FEED",
+      "LFIMG": 300,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 110,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 360,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 120,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 360,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 130,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 360,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 140,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 360,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 150,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 360,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 160,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 420,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 170,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 360,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 180,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 420,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 190,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 420,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 200,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 540,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 210,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 480,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 220,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 480,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124267542",
+      "POSNR": 230,
+      "MATNR": " 71000084",
+      "MAKTX": "IB ROSS BROILER (STARTER) FEED",
+      "LFIMG": 600,
+      "MEINS": "KG"
+    }
+  ]
+}

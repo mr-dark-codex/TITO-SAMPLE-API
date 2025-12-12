@@ -1,0 +1,26 @@
+{
+  "DRIVERNAME": "Sunil Kumar",
+  "GATESLIP": 6205115649,
+  "VEHICLE": "RJ32GC2669",
+  "ENTRYDATE": "2025-12-11",
+  "ENTRYTIME": "10:07:31",
+  "VEHTYPE": "LOADING",
+  "TJ_DELIVERY": [
+    {
+      "VBELN": "8124245793",
+      "POSNR": 10,
+      "MATNR": " 71000085",
+      "MAKTX": "IB ROSS BROILER FINISHER FEED",
+      "LFIMG": 7740,
+      "MEINS": "KG"
+    },
+    {
+      "VBELN": "8124245793",
+      "POSNR": 20,
+      "MATNR": " 71000085",
+      "MAKTX": "IB ROSS BROILER FINISHER FEED",
+      "LFIMG": 7800,
+      "MEINS": "KG"
+    }
+  ]
+}

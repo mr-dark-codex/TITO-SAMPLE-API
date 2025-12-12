@@ -1,0 +1,11 @@
+6205151850
+
+LOADING
+
+
+http://172.16.0.147:8001/sap/bc/rest/titogatepass?gateslip=6205151850&vehtype=LOADING&plant=N441
+
+
+http://172.16.0.147:8001/sap/bc/rest/tito_weighment?gateslip=6205151850&vehtype=LOADING&plant=N441
+
+http://172.16.0.147:8001/sap/bc/rest/tito_weighment?gateslip=6205143387&vehtype=LOADING&plant=N441&sapClientNo=786
