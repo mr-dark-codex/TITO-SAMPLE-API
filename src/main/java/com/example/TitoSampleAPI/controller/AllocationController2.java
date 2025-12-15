@@ -8,124 +8,67 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 
+// import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @RestController
-@RequestMapping("/api/v1/")
-public class AllocationController {
-
+@RequestMapping("/sap/bc/rest/")
+public class AllocationController2 {
     Map<Long, AllocationSampleData> map = new HashMap<>();
     Map<String, String> plantDetails = new HashMap<>();
+    Map<Long, Boolean> gatesliMap = new HashMap<>();
     private final String PLANT_NO = "N365";
+    // Map<
 
     @GetMapping("/titogatepass")
     public ResponseEntity<?> getAllocationSample(
-            @RequestParam(required = false) Long gateslip,
-            @RequestParam(required = false) String vehtype,
-            @RequestParam(required = false) String plant,
+            @RequestParam Long gateslip,
+            @RequestParam String vehtype,
+            @RequestParam String plant,
             @RequestParam(required = false) String sapClientNo) {
 
-        // Initialize data
+        System.out.println("gateslip : " + gateslip);
+        // seed the data
         this.seedSampleData();
         this.initPlantDetails();
 
-        // 1. Check if required parameters are missing
-        if (gateslip == null || vehtype == null || vehtype.trim().isEmpty()) {
-            return ResponseEntity.badRequest().body("Input Parameter \"gateslip or plant or vehtype\" is missing");
-        }
-
-        // 5. Check if plant is missing (when required)
-        if (plant == null || plant.trim().isEmpty()) {
-            return ResponseEntity.badRequest().body("Input Parameter \"gateslip or plant or vehtype\" is missing");
-        }
-
-        // 2. If vehtype is random/invalid
+        // First Validation
         if (!vehtype.equalsIgnoreCase("LOADING") && !vehtype.equalsIgnoreCase("UNLOADING")) {
             return ResponseEntity.ok(new HashMap<>());
         }
 
-        // 4. Check if plant is mismatched
-        if (!plantDetails.containsKey(plant)) {
-            AllocationSampleData data = map.get(gateslip);
-            if (data != null) {
-                AllocationSampleData response = new AllocationSampleData();
-                response.setDriverName(data.getDriverName());
-                response.setGateSlip(data.getGateSlip());
-                response.setVehicle(data.getVehicle());
-                response.setEntryDate(data.getEntryDate());
-                response.setEntryTime(data.getEntryTime());
-                response.setVehType(data.getVehType());
-                // No material details for mismatched plant
-                return ResponseEntity.ok(response);
-            }
-        }
-
         AllocationSampleData data = map.get(gateslip);
-        
-        // 7. If gateslip is random/mismatched
-        if (data == null) {
-            Map<String, Object> response = new HashMap<>();
-            response.put("GATESLIP", gateslip);
-            response.put("VEHTYPE", vehtype.toUpperCase());
-            return ResponseEntity.ok(response);
-        }
+        if (data != null) {
+            System.out.println("Allocation API Data : " + data.toString());
+            if (vehtype.equalsIgnoreCase(data.getVehType())) {
+                // return ResponseEntity.ok(data);
 
-        // 3. If vehtype is mismatched (opposite of what's required)
-        if (!vehtype.equalsIgnoreCase(data.getVehType())) {
-            Map<String, String> response = new HashMap<>();
-            response.put("VEHTYPE", vehtype.toUpperCase());
-            return ResponseEntity.ok(response);
-        }
+                // Plant No:
+                if (gatesliMap.containsKey(gateslip) && plant != null && !plant.trim().isEmpty()) {
+                    if (!plantDetails.containsKey(plant)) {
+                        System.out
+                                .println("Mismatched plant number: " + plant + ", expected: " + this.PLANT_NO);
+                        return ResponseEntity.ok("Invalid Plant No");
+                    }
+                }
+                return ResponseEntity.ok(data);
 
-        // 8. Valid gateslip but not for this plant - return without material details
-        if (plantDetails.containsKey(plant) && data != null) {
-            
-            // Check if this is a cross-plant scenario (simplified logic)
-            if (!plant.equals(PLANT_NO) && gateslip.equals(6205158602L)) {
-                AllocationSampleData response = new AllocationSampleData();
-                response.setDriverName("manish");
-                response.setGateSlip(6205158602L);
-                response.setVehicle("RJ01GD6129");
-                response.setEntryDate("2025-12-12");
-                response.setEntryTime("10:23:04");
-                response.setVehType("LOADING");
-                return ResponseEntity.ok(response);
+            } else {
+                System.out.println("Mismatched vehicle type: " + vehtype);
+                return ResponseEntity.ok(Map.of("VEHTYPE", vehtype));
             }
+
+            
+        } else {
+            System.out.println("No data found for gateslip: " + gateslip);
+            return ResponseEntity.ok(Map.of("GATESLIP", gateslip, "VEHTYPE", vehtype));
         }
-
-        // Valid case - return full data
-        return ResponseEntity.ok(List.of(data));
     }
-
-
-
-    @GetMapping("/titogatepass_v2") 
-    public ResponseEntity<?> getAllocationSample_v2(
-            @RequestParam Long gateslip,
-            @RequestParam String vehtype,
-            @RequestParam(required = false) String plant,
-            @RequestParam(required = false) String sapClientNo
-    )  {
-
-        this.seedSampleData();
-        this.initPlantDetails();
-
-
-
-
-        return ResponseEntity.ok(new HashMap<>());
-    }
-    
 
     public void seedSampleData() {
-        if (!map.isEmpty()) return;
-        
         AllocationSampleData data = new AllocationSampleData();
         data.setDriverName("Sunil Kumar");
         data.setGateSlip(6205115649L);
@@ -178,23 +121,18 @@ public class AllocationController {
 
         data2.setTjDelivery(Arrays.asList(item3, item4));
 
-        // Additional sample data for testing scenarios
-        AllocationSampleData data3 = new AllocationSampleData();
-        data3.setDriverName("BALA saheb");
-        data3.setGateSlip(6205158601L);
-        data3.setVehicle("TS05UD4488");
-        data3.setEntryDate("2025-12-12");
-        data3.setEntryTime("11:20:20");
-        data3.setVehType("LOADING");
-
         map.put(6205115649L, data);
         map.put(6205143387L, data2);
-        map.put(6205158601L, data3);
+
+        gatesliMap.put(6205143387L, false);
+        gatesliMap.put(6205115649L, true);
+
     }
 
     public void initPlantDetails() {
-        if (!plantDetails.isEmpty()) return;
-        
+        if (!plantDetails.isEmpty())
+            return;
+
         plantDetails.put("N101", "SOYA_SOLVENT");
         plantDetails.put("N201", "Refinery_Plant");
         plantDetails.put("N202", "Refinery_ETP");
