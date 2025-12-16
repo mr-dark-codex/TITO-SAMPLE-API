@@ -69,16 +69,16 @@ public class SecurityConfig {
                 AuthenticationException authException) -> {
 
             // System.out.println("PARAMETER : " + request.getParameterNames());
-            Enumeration<String> paramNames = request.getParameterNames();
-            while (paramNames.hasMoreElements()) {
-                String paramName = paramNames.nextElement();
-                System.out.println("PARAMETER: " + paramName + " = " + request.getParameter(paramName));
-            }
+            // Enumeration<String> paramNames = request.getParameterNames();
+            // while (paramNames.hasMoreElements()) {
+            //     String paramName = paramNames.nextElement();
+            //     System.out.println("PARAMETER: " + paramName + " = " + request.getParameter(paramName));
+            // }
 
-            // Or get specific parameters
-            String gateslip = request.getParameter("gateslip");
-            String vehtype = request.getParameter("vehtype");
-            System.out.println("gateslip: " + gateslip + ", vehtype: " + vehtype);
+            // // Or get specific parameters
+            // String gateslip = request.getParameter("gateslip");
+            // String vehtype = request.getParameter("vehtype");
+            // System.out.println("gateslip: " + gateslip + ", vehtype: " + vehtype);
 
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
