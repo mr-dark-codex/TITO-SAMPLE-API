@@ -3,44 +3,44 @@ package com.example.TitoSampleAPI.Entity;
 import java.util.List;
 
 public class AllocationSampleData {
-    private String driverName;
-    private Long gateSlip;
-    private String vehicle;
-    private String entryDate;
-    private String entryTime;
-    private String vehType;
-    private List<TjDelivery> tjDelivery;
+    private String DRIVERNAME;
+    private Long GATESLIP;
+    private String VEHICLE;
+    private String ENTRYDATE;
+    private String ENTRYTIME;
+    private String VEHTYPE;
+    private List<TjDelivery> TJ_DELIVERY;
     
     // Constructors
     public AllocationSampleData() {}
     
     // Getters and Setters
-    public String getDriverName() { return driverName; }
-    public void setDriverName(String driverName) { this.driverName = driverName; }
+    public String getDriverName() { return DRIVERNAME; }
+    public void setDriverName(String driverName) { this.DRIVERNAME = driverName; }
     
-    public Long getGateSlip() { return gateSlip; }
-    public void setGateSlip(Long gateSlip) { this.gateSlip = gateSlip; }
+    public Long getGateSlip() { return GATESLIP; }
+    public void setGateSlip(Long gateSlip) { this.GATESLIP = gateSlip; }
     
-    public String getVehicle() { return vehicle; }
-    public void setVehicle(String vehicle) { this.vehicle = vehicle; }
+    public String getVehicle() { return VEHICLE; }
+    public void setVehicle(String vehicle) { this.VEHICLE = vehicle; }
     
-    public String getEntryDate() { return entryDate; }
-    public void setEntryDate(String entryDate) { this.entryDate = entryDate; }
+    public String getEntryDate() { return ENTRYDATE; }
+    public void setEntryDate(String entryDate) { this.ENTRYDATE = entryDate; }
     
-    public String getEntryTime() { return entryTime; }
-    public void setEntryTime(String entryTime) { this.entryTime = entryTime; }
+    public String getEntryTime() { return ENTRYTIME; }
+    public void setEntryTime(String entryTime) { this.ENTRYTIME = entryTime; }
     
-    public String getVehType() { return vehType; }
-    public void setVehType(String vehType) { this.vehType = vehType; }
+    public String getVehType() { return VEHTYPE; }
+    public void setVehType(String vehType) { this.VEHTYPE = vehType; }
     
-    public List<TjDelivery> getTjDelivery() { return tjDelivery; }
-    public void setTjDelivery(List<TjDelivery> tjDelivery) { this.tjDelivery = tjDelivery; }
+    public List<TjDelivery> getTJ_DELIVERY() { return TJ_DELIVERY; }
+    public void setTJ_DELIVERY(List<TjDelivery> tjDelivery) { this.TJ_DELIVERY = tjDelivery; }
 
     @Override
     public String toString() {
-        return "AllocationSampleData [driverName=" + driverName + ", gateSlip=" + gateSlip + ", vehicle=" + vehicle
-                + ", entryDate=" + entryDate + ", entryTime=" + entryTime + ", vehType=" + vehType + ", tjDelivery="
-                + tjDelivery + "]";
+        return "AllocationSampleData [driverName=" + DRIVERNAME + ", gateSlip=" + GATESLIP + ", vehicle=" + VEHICLE 
+                + ", entryDate=" + ENTRYDATE + ", entryTime=" + ENTRYTIME + ", vehType=" + VEHTYPE + ", tjDelivery="
+                + TJ_DELIVERY + "]";
     }
 
     

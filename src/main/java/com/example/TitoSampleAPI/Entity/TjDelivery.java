@@ -1,39 +1,39 @@
 package com.example.TitoSampleAPI.Entity;
 
 public class TjDelivery {
-    private String vbeln;
-    private Integer posnr;
-    private String matnr;
-    private String maktx;
-    private Integer lfimg;
-    private String meins;
+    private String VBELN;
+    private Integer POSNR;
+    private String MATNR;
+    private String MAKTX;
+    private Integer LFIMG;
+    private String MEINS;
     
     // Constructors
     public TjDelivery() {}
     
     // Getters and Setters
-    public String getVbeln() { return vbeln; }
-    public void setVbeln(String vbeln) { this.vbeln = vbeln; }
+    public String getVBELN() { return VBELN; }
+    public void setVbeln(String VBELN) { this.VBELN = VBELN; }
     
-    public Integer getPosnr() { return posnr; }
-    public void setPosnr(Integer posnr) { this.posnr = posnr; }
+    public Integer getPOSNR() { return POSNR; }
+    public void setPosnr(Integer POSNR) { this.POSNR = POSNR; }
     
-    public String getMatnr() { return matnr; }
-    public void setMatnr(String matnr) { this.matnr = matnr; }
+    public String getMATNR() { return MATNR; }
+    public void setMatnr(String MATNR) { this.MATNR = MATNR; }
     
-    public String getMaktx() { return maktx; }
-    public void setMaktx(String maktx) { this.maktx = maktx; }
+    public String getMAKTX() { return MAKTX; }
+    public void setMaktx(String MAKTX) { this.MAKTX = MAKTX; }
     
-    public Integer getLfimg() { return lfimg; }
-    public void setLfimg(Integer lfimg) { this.lfimg = lfimg; }
+    public Integer getLFIMG() { return LFIMG; }
+    public void setLfimg(Integer LFIMG) { this.LFIMG = LFIMG; }
     
-    public String getMeins() { return meins; }
-    public void setMeins(String meins) { this.meins = meins; }
+    public String getMEINS() { return MEINS; }
+    public void setMeins(String MEINS) { this.MEINS = MEINS; }
 
     @Override
     public String toString() {
-        return "TjDelivery [vbeln=" + vbeln + ", posnr=" + posnr + ", matnr=" + matnr + ", maktx=" + maktx + ", lfimg="
-                + lfimg + ", meins=" + meins + "]";
+        return "TjDelivery [VBELN=" + VBELN + ", POSNR=" + POSNR + ", MATNR=" + MATNR + ", MAKTX=" + MAKTX + ", LFIMG="
+                + LFIMG + ", MEINS=" + MEINS + "]";
     }
 
     

@@ -1,32 +1,32 @@
 package com.example.TitoSampleAPI.Entity;
 
 public class DeallocationSampleData {
-    private String werks;
-    private String name1;
-    private String ginus;
-    private Integer etweight;
-    private Integer ltweight;
-    private String unit1;
+    private String WERKS;
+    private String NAME1;
+    private String GINUS;
+    private Integer ETWEIGHT;
+    private Integer LTWEIGHT;
+    private String UNIT1;
     
     // Constructors
     public DeallocationSampleData() {}
     
     // Getters and Setters
-    public String getWerks() { return werks; }
-    public void setWerks(String werks) { this.werks = werks; }
+    public String getWerks() { return WERKS; }
+    public void setWerks(String werks) { this.WERKS = werks; }
     
-    public String getName1() { return name1; }
-    public void setName1(String name1) { this.name1 = name1; }
+    public String getName1() { return NAME1; }
+    public void setName1(String name1) { this.NAME1 = name1; }
     
-    public String getGinus() { return ginus; }
-    public void setGinus(String ginus) { this.ginus = ginus; }
+    public String getGinus() { return GINUS; }
+    public void setGinus(String ginus) { this.GINUS = ginus; }
     
-    public Integer getEtweight() { return etweight; }
-    public void setEtweight(Integer etweight) { this.etweight = etweight; }
+    public Integer getEtweight() { return ETWEIGHT; }
+    public void setEtweight(Integer etweight) { this.ETWEIGHT = etweight; }
     
-    public Integer getLtweight() { return ltweight; }
-    public void setLtweight(Integer ltweight) { this.ltweight = ltweight; }
+    public Integer getLtweight() { return LTWEIGHT; }
+    public void setLtweight(Integer ltweight) { this.LTWEIGHT = ltweight; }
     
-    public String getUnit1() { return unit1; }
-    public void setUnit1(String unit1) { this.unit1 = unit1; }
+    public String getUnit1() { return UNIT1; }
+    public void setUnit1(String unit1) { this.UNIT1 = unit1; }
 }

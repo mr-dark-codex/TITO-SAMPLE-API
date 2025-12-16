@@ -12,8 +12,6 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
@@ -150,7 +148,7 @@ public class AllocationController {
         item2.setLfimg(7800);
         item2.setMeins("KG");
 
-        data.setTjDelivery(Arrays.asList(item1, item2));
+        data.setTJ_DELIVERY(Arrays.asList(item1, item2));
 
         AllocationSampleData data2 = new AllocationSampleData();
         data2.setDriverName("Kailash");
@@ -176,7 +174,7 @@ public class AllocationController {
         item4.setLfimg(60);
         item4.setMeins("KG");
 
-        data2.setTjDelivery(Arrays.asList(item3, item4));
+        data2.setTJ_DELIVERY(Arrays.asList(item3, item4));
 
         // Additional sample data for testing scenarios
         AllocationSampleData data3 = new AllocationSampleData();
