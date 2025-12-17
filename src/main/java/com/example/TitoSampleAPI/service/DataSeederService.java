@@ -19,8 +19,6 @@ public class DataSeederService {
     Map<Long, DeallocationSampleData> deallocationMap = new HashMap<>();
     Map<String, String> plantDetails = new HashMap<>();
     Map<Long, Boolean> plantNoRequiredMap = new HashMap<>();
-    private final String PLANT_NO = "N365";
-
 
     // Getter methods to access the maps
     public Map<Long, AllocationSampleData> getAllocationMap() {
@@ -31,7 +29,7 @@ public class DataSeederService {
         return deallocationMap;
     }
 
-    //getter for plantDetails
+    // getter for plantDetails
     public Map<String, String> getPlantDetails() {
         return plantDetails;
     }
@@ -110,16 +108,19 @@ public class DataSeederService {
         allocationMap.put(6205143387L, data2);
         allocationMap.put(3100510143L, data3);
 
-        // Plant no required or not
+        // Plant no required gateslip no
         plantNoRequiredMap.put(6205115649L, true);
+        plantNoRequiredMap.put(3100510143L, true);
+
+        // Plant no without required gateslip no
         plantNoRequiredMap.put(6205143387L, false);
-        plantNoRequiredMap.put(3100510143L, false);
+
     }
 
     @PostConstruct
     public void seedDeallocationData() {
         DeallocationSampleData data = new DeallocationSampleData();
-        data.setWerks("N441");
+        data.setWerks("N365");
         data.setName1("Poultry Feed-Inhouse-Rajasthan");
         data.setGinus("BDRDISPGATEI");
         data.setEtweight(14610);
@@ -127,16 +128,25 @@ public class DataSeederService {
         data.setUnit1("KG");
 
         DeallocationSampleData data2 = new DeallocationSampleData();
-        data2.setWerks("N406");
+        data2.setWerks("N365");
         data2.setName1("Poultry Feed- Inhouse-Tolagaon");
         data2.setGinus("9685715419");
         data2.setEtweight(12620);
         data2.setLtweight(52630);
         data2.setUnit1("KG");
 
+        DeallocationSampleData data3 = new DeallocationSampleData();
+        data3.setWerks("N406");
+        data3.setName1("Poultry Feed-Inhouse-Jajpur");
+        data3.setGinus("BDRDISPGATEI");
+        data3.setEtweight(14610);
+        data3.setLtweight(21990);
+        data3.setUnit1("KG");
+
         deallocationMap.put(6205115649L, data);
-        deallocationMap.put(6205143387L, data);
         deallocationMap.put(3100510143L, data2);
+
+        deallocationMap.put(6205143387L, data3);
     }
 
     @PostConstruct
