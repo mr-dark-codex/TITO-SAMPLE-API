@@ -38,8 +38,8 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        System.out.println("username : " + username);
-        System.out.println("Password : " + password);
+        // System.out.println("username : " + username);
+        // System.out.println("Password : " + password);
         return new BCryptPasswordEncoder();
     }
 

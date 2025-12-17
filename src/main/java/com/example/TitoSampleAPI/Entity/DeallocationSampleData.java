@@ -1,5 +1,8 @@
 package com.example.TitoSampleAPI.Entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class DeallocationSampleData {
     private String WERKS;
     private String NAME1;
@@ -29,4 +32,12 @@ public class DeallocationSampleData {
     
     public String getUnit1() { return UNIT1; }
     public void setUnit1(String unit1) { this.UNIT1 = unit1; }
+
+    @Override
+    public String toString() {
+        return "DeallocationSampleData [WERKS=" + WERKS + ", NAME1=" + NAME1 + ", GINUS=" + GINUS + ", ETWEIGHT="
+                + ETWEIGHT + ", LTWEIGHT=" + LTWEIGHT + ", UNIT1=" + UNIT1 + "]";
+    }
+
+    
 }

@@ -76,7 +76,7 @@ public class DataSeederService {
         data2.setVehicle("RJ23GA7425");
         data2.setEntryDate("2025-12-11");
         data2.setEntryTime("09:47:23");
-        data2.setVehType("UNLOADING");
+        data2.setVehType("LOADING");
 
         TjDelivery item3 = new TjDelivery();
         item3.setVbeln("8124267542");
@@ -111,8 +111,8 @@ public class DataSeederService {
         allocationMap.put(3100510143L, data3);
 
         // Plant no required or not
-        plantNoRequiredMap.put(6205143387L, false);
         plantNoRequiredMap.put(6205115649L, true);
+        plantNoRequiredMap.put(6205143387L, false);
         plantNoRequiredMap.put(3100510143L, false);
     }
 
