@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  tito-api:
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      - PORT=8081
+    container_name: tito-sample-api
