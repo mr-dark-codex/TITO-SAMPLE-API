@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: tito-sample-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    buildCommand: ./mvnw clean package -DskipTests
