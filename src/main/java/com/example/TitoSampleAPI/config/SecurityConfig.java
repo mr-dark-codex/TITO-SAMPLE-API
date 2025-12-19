@@ -97,7 +97,10 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+        http.authorizeHttpRequests(auth -> auth
+                .requestMatchers("/").permitAll()
+                .anyRequest().authenticated()
+                )
                 // .httpBasic(basic ->
                 // basic.authenticationEntryPoint(authenticationEntryPoint()))
                 .httpBasic(Customizer.withDefaults())
@@ -105,3 +108,10 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
+// http.authorizeHttpRequests(auth -> auth
+//                 .requestMatchers("/").permitAll()
+//                 .anyRequest().authenticated())
+//                 .httpBasic(Customizer.withDefaults())
+//                 .csrf(csrf -> csrf.disable());
+//         return http.build();
