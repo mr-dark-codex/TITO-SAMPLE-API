@@ -104,9 +104,47 @@ public class DataSeederService {
         data3.setVehType("UNLOADING");
         data3.setMATCODE("000000000021000021");
 
+        // New record from provided JSON
+        AllocationSampleData data4 = new AllocationSampleData();
+        // data4.setDriverName("anil");
+        data4.setGateSlip(6205185754L);
+        data4.setVehicle("RJ32GC2043");
+        data4.setEntryDate("2025-12-19");
+        data4.setEntryTime("09:38:19");
+        data4.setVehType("LOADING");
+
+        TjDelivery[] items = {
+            createTjDelivery("8124298990", 10, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 120, "KG"),
+            createTjDelivery("8124298990", 20, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 180, "KG"),
+            createTjDelivery("8124298990", 30, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 180, "KG"),
+            createTjDelivery("8124298990", 40, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 180, "KG"),
+            createTjDelivery("8124298990", 50, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 240, "KG"),
+            createTjDelivery("8124298990", 60, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 240, "KG"),
+            createTjDelivery("8124298990", 70, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 360, "KG"),
+            createTjDelivery("8124298990", 80, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 360, "KG"),
+            createTjDelivery("8124298990", 90, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 360, "KG"),
+            createTjDelivery("8124298990", 100, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 420, "KG"),
+            createTjDelivery("8124298990", 110, " 71000083", "IB ROSS BROILER (PRESTARTER) FEED", 420, "KG"),
+            createTjDelivery("8124298990", 120, " 71000084", "IB ROSS BROILER (STARTER) FEED", 480, "KG"),
+            createTjDelivery("8124298990", 130, " 71000084", "IB ROSS BROILER (STARTER) FEED", 480, "KG"),
+            createTjDelivery("8124298990", 140, " 71000084", "IB ROSS BROILER (STARTER) FEED", 480, "KG"),
+            createTjDelivery("8124298990", 150, " 71000084", "IB ROSS BROILER (STARTER) FEED", 600, "KG"),
+            createTjDelivery("8124298990", 160, " 71000084", "IB ROSS BROILER (STARTER) FEED", 600, "KG"),
+            createTjDelivery("8124298990", 170, " 71000084", "IB ROSS BROILER (STARTER) FEED", 660, "KG"),
+            createTjDelivery("8124298990", 180, " 71000084", "IB ROSS BROILER (STARTER) FEED", 720, "KG"),
+            createTjDelivery("8124298990", 190, " 71000084", "IB ROSS BROILER (STARTER) FEED", 720, "KG"),
+            createTjDelivery("8124298990", 200, " 71000084", "IB ROSS BROILER (STARTER) FEED", 780, "KG"),
+            createTjDelivery("8124298990", 210, " 71000084", "IB ROSS BROILER (STARTER) FEED", 840, "KG"),
+            createTjDelivery("8124298990", 220, " 71000084", "IB ROSS BROILER (STARTER) FEED", 840, "KG"),
+            createTjDelivery("8124298990", 230, " 71000084", "IB ROSS BROILER (STARTER) FEED", 960, "KG"),
+            createTjDelivery("8124298990", 240, " 71000084", "IB ROSS BROILER (STARTER) FEED", 960, "KG")
+        };
+        data4.setTJ_DELIVERY(Arrays.asList(items));
+
         allocationMap.put(6205115649L, data);
         allocationMap.put(6205143387L, data2);
         allocationMap.put(3100510143L, data3);
+        allocationMap.put(6205185754L, data4);
 
         // Plant no required gateslip no
         plantNoRequiredMap.put(6205115649L, true);
@@ -114,6 +152,7 @@ public class DataSeederService {
 
         // Plant no without required gateslip no
         plantNoRequiredMap.put(6205143387L, false);
+        plantNoRequiredMap.put(6205185754L, false);
 
     }
 
@@ -168,5 +207,16 @@ public class DataSeederService {
         plantDetails.put("N652", "Soya_Chunk_Plant");
         plantDetails.put("NC07", "Boiler");
         plantDetails.put("NC09", "Central_Store");
+    }
+
+    private TjDelivery createTjDelivery(String vbeln, int posnr, String matnr, String maktx, int lfimg, String meins) {
+        TjDelivery item = new TjDelivery();
+        item.setVbeln(vbeln);
+        item.setPosnr(posnr);
+        item.setMatnr(matnr);
+        item.setMaktx(maktx);
+        item.setLfimg(lfimg);
+        item.setMeins(meins);
+        return item;
     }
 }
