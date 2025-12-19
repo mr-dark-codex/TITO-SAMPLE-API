@@ -4,7 +4,7 @@ services:
   tito-api:
     build: .
     ports:
-      - "8081:8081"
+      - "8085:8085"
     environment:
-      - PORT=8081
+      - PORT=8085
     container_name: tito-sample-api

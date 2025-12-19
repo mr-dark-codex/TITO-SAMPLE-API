@@ -182,10 +182,17 @@ public class DataSeederService {
         data3.setLtweight(21990);
         data3.setUnit1("KG");
 
+        DeallocationSampleData data4 = new DeallocationSampleData();
+        data4.setWerks("21");
+        data4.setGinus("9685715419");
+        data4.setEtweight(6270);
+        data4.setLtweight(18450);
+        data4.setUnit1("KG");
+
         deallocationMap.put(6205115649L, data);
         deallocationMap.put(3100510143L, data2);
-
         deallocationMap.put(6205143387L, data3);
+        deallocationMap.put(6205185754L, data4);
     }
 
     @PostConstruct

@@ -113,6 +113,10 @@ public class AllocationController2 {
         AllocationSampleData data = allocationMap.get(gateslip);
         DeallocationSampleData dellocatedData = deallocationMap.get(gateslip);
 
+        if(data == null || dellocatedData == null ) {
+            return ResponseEntity.ok(List.of(Map.of("WERKS", plant, "UNIT1", "KG")));
+        }
+
         boolean isPlantCodeRequired = gatesliMap.containsKey(gateslip) && gatesliMap.get(gateslip);
         boolean isGateslipValid = dellocatedData != null;
         boolean isPlantValid = false;
