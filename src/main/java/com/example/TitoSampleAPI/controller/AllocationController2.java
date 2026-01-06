@@ -60,7 +60,7 @@ public class AllocationController2 {
                 System.out.println("IS PANT CODE RQUIRED : " + isPlantCodeRequired);
                 if (isPlantCodeRequired) {
 
-                    boolean isValidPlantCode = plantDetails.containsKey(plant);
+                    boolean isValidPlantCode = plantDetails.containsKey(plant.toUpperCase());
                     if (!isValidPlantCode) {
                         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid Plant Code");
                     }
@@ -124,7 +124,7 @@ public class AllocationController2 {
         System.out.println("IS PLANT CODE RQUIRED : " + isPlantCodeRequired);
 
         if (isPlantCodeRequired) {
-            boolean isValidPlantCode = plantDetails.containsKey(plant);
+            boolean isValidPlantCode = plantDetails.containsKey(plant.toUpperCase());
             if (!isValidPlantCode) {
                 return ResponseEntity.badRequest().body("Invalid Plant Code");
             }
