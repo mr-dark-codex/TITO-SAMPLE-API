@@ -107,6 +107,7 @@ public class DataSeederService {
         // New record from provided JSON
         AllocationSampleData data4 = new AllocationSampleData();
         // data4.setDriverName("anil");
+        data4.setDriverName("");
         data4.setGateSlip(6205185754L);
         data4.setVehicle("RJ32GC2043");
         data4.setEntryDate("2025-12-19");
